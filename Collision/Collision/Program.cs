@@ -6,8 +6,11 @@ using System.IO;
 /*
  *  Collide
  *  Eine Simulation im 2-dimensionalen Raum
- * 
- * 
+ *  Aufgabenverteilung
+ *  a) Delago Aaron
+ *  b) Auer Tschurtschenthaler Raphael
+ *  c) Gufler Jonas
+ *  d) Huetter Jonas
  * 
  * 2020 TFO-Meran
  */
