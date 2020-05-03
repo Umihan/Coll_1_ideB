@@ -32,6 +32,25 @@ namespace ConsoleApplication1
             // Konstruktor
             public einer()
             {
+                int provisionally_posx = 0;
+                int provisionally_posy = 0;
+                bool pos_available = false;
+                Random random_pos = new Random();
+
+                //Finden einer Position, welche noch frei ist
+                do{                                                         
+                    pos_available = false;
+                    provisionally_posx = random_pos.Next(1, Console.WindowWidth);
+                    provisionally_posy = random_pos.Next(1, Console.WindowWidth);
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        
+                    }
+                } 
+                while(pos_available==false);
+                
+                
             }
             //Private Methoden
             void show()
