@@ -41,10 +41,7 @@ namespace ConsoleApplication1
                 //die Eigenschaft "farbe" wird initialisiert
                 farbe = (ConsoleColor)random_farbe.Next(0, 16);
 
-                feld[0, 3] = 1;
-                
-
-
+       
 
 
                 //Finden einer Position, welche noch frei ist
@@ -64,6 +61,7 @@ namespace ConsoleApplication1
 
                 feld[provisionally_posx, provisionally_posy]=1;
                 
+
                 
             }
             //Private Methoden
