@@ -40,6 +40,8 @@ namespace ConsoleApplication1
 
                 //die Eigenschaft "farbe" wird initialisiert
                 farbe = (ConsoleColor)random_farbe.Next(0, 16);
+
+                feld[0, 3] = 1;
                 
 
 
