@@ -39,16 +39,20 @@ namespace ConsoleApplication1
 
                 //Finden einer Position, welche noch frei ist
                 do{                                                         
-                    pos_available = false;
-                    provisionally_posx = random_pos.Next(1, Console.WindowWidth);
-                    provisionally_posy = random_pos.Next(1, Console.WindowWidth);
+                    provisionally_posx = random_pos.Next(1, seite);
+                    provisionally_posy = random_pos.Next(1, seite);
 
-                    for (int i = 0; i < 6; i++)
+                    if (feld[provisionally_posx, provisionally_posy] == 0)
                     {
-                        
+                        pos_available = true;
                     }
                 } 
                 while(pos_available==false);
+
+                posx = provisionally_posx;
+                posy = provisionally_posy;
+
+                feld[provisionally_posx, provisionally_posy]=1;
                 
                 
             }
