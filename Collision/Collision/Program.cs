@@ -88,11 +88,14 @@ namespace ConsoleApplication1
             Console.WindowHeight = seite;
             Console.Clear();
             Random ZG = new Random();
-            int Anzahl=ZG.Next(1,50);
+            int Anzahl=ZG.Next(1,6);
             einer[] meineEiner = new einer[Anzahl];
             for (int i = 0; i < Anzahl; i++)
             {
                 meineEiner[i] = new einer();
+
+                //Objekte werden zeitverzögert ezeugt
+                System.Threading.Thread.Sleep(20);              
             }
             Console.CursorVisible = false;
             for (int i = 0; i < 1000; i++)
