@@ -40,6 +40,10 @@ namespace ConsoleApplication1
                 int provisionally_posx = 0;
                 int provisionally_posy = 0;
                 bool pos_available = false;
+
+
+                //Objekte werden zeitverzögert ezeugt
+                System.Threading.Thread.Sleep(20); 
                 
 
                 //die Eigenschaft "farbe" wird initialisiert
@@ -92,10 +96,9 @@ namespace ConsoleApplication1
             einer[] meineEiner = new einer[Anzahl];
             for (int i = 0; i < Anzahl; i++)
             {
-                meineEiner[i] = new einer();
 
-                //Objekte werden zeitverzögert ezeugt
-                System.Threading.Thread.Sleep(20);              
+                meineEiner[i] = new einer();
+             
             }
             Console.CursorVisible = false;
             for (int i = 0; i < 1000; i++)
