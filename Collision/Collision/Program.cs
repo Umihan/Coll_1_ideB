@@ -82,6 +82,48 @@ namespace ConsoleApplication1
             //Öffentliche Methoden
             public void Move()
             {
+                Random Directions = new Random(); //Random Zahl für die Richtung wird generiert
+                int direction = Directions.Next(1, 4);
+
+                int Xbefore = posx; 
+                int Ybefore = posy;
+
+                switch (direction)
+                {
+
+                    case 1:
+                        posx = Xbefore + 1;
+                        posy = Ybefore;
+
+                    break;
+
+
+                    case 2:
+                        posx = Xbefore;
+                        posy = Ybefore +1;
+
+                    break;
+                        posx = Xbefore - 1;
+                        posy = Ybefore;
+                    case 3:
+
+                    break;
+
+                    case 4:
+                        posx = Xbefore;
+                        posy = Ybefore-1;
+
+                    break;
+
+                   
+                }
+
+                hide();
+                show();
+
+                if (posx == Xbefore)        //Falls auf der gleichen Position
+                    if (posy == Ybefore)
+                        collide();
             }
 
         }
