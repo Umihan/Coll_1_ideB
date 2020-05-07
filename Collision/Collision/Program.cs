@@ -70,11 +70,14 @@ namespace ConsoleApplication1
      
             }
             //Private Methoden
-            void show()
+            void show(int posx, int posy)
             {
+                
             }
             void hide()
             {
+                Console.SetCursorPosition(posx, posy);
+                Console.Write(" ");
             }
             void collide()
             {
