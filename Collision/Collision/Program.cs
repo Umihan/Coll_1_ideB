@@ -72,16 +72,22 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+                farbe = (ConsoleColor)random_farbe.Next(0, 16);
+                Console.ForegroundColor = farbe;
                 Console.SetCursorPosition(posx, posy);
                 Console.Write("0");                             //Zeichnet neuen Punkt an
             }
             void hide()
             {
+                int XBefore = posx;
+                int YBefore = posy;
                 Console.SetCursorPosition(XBefore, YBefore);
                 Console.Write(" ");                                 //Llöscht vorherige Position
             }
             void collide()
             {
+                int XBefore = posx;
+                int YBefore = posy;
                 Console.SetCursorPosition(XBefore, YBefore);
                 Console.Write("X");                           //Markiert Kollision mit einem X
               
