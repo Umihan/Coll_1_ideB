@@ -70,17 +70,17 @@ namespace ConsoleApplication1
      
             }
             //Private Methoden
-            void show(int posx, int posy)
+            void show()
             {
                 Console.SetCursorPosition(posx, posy);
                 Console.Write("0");                             //Zeichnet neuen Punkt an
             }
-            void hide(int XBefore, int YBefore)
+            void hide()
             {
                 Console.SetCursorPosition(XBefore, YBefore);
                 Console.Write(" ");                                 //Llöscht vorherige Position
             }
-            void collide(int posx, int posy, int XBefore, int YBefore)
+            void collide()
             {
                 Console.SetCursorPosition(XBefore, YBefore);
                 Console.Write("X");                           //Markiert Kollision mit einem X
