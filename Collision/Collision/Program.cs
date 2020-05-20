@@ -88,30 +88,33 @@ namespace ConsoleApplication1
                 int Xbefore = posx; 
                 int Ybefore = posy;
 
+                int tempx = 0;
+                int tempy = 0;
+
                 switch (direction)
                 {
 
                     case 1:
-                        posx = Xbefore + 1;
-                        posy = Ybefore;
+                        tempx = Xbefore + 1;
+                        tempy = Ybefore;
 
                     break;
 
 
                     case 2:
-                        posx = Xbefore;
-                        posy = Ybefore +1;
+                        tempx = Xbefore;
+                        tempy = Ybefore +1;
 
                     break;
-                        posx = Xbefore - 1;
-                        posy = Ybefore;
+                        tempx = Xbefore - 1;
+                        tempy = Ybefore;
                     case 3:
 
                     break;
 
                     case 4:
-                        posx = Xbefore;
-                        posy = Ybefore-1;
+                        tempx = Xbefore;
+                        tempy = Ybefore-1;
 
                     break;
 
@@ -122,8 +125,17 @@ namespace ConsoleApplication1
                 show();
 
                 if (posx == Xbefore)        //Falls auf der gleichen Position
+                {
                     if (posy == Ybefore)
-                        collide();
+                    { collide(); }
+                }
+
+                else
+                {
+                    posx = tempx;
+                    posy = tempy;
+                }
+               
             }
 
         }
