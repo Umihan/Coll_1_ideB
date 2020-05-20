@@ -124,10 +124,20 @@ namespace ConsoleApplication1
                 hide();
                 show();
 
-                if (posx == Xbefore)        //Falls auf der gleichen Position
+                if (tempx == Xbefore)        //Falls auf der gleichen Position
                 {
-                    if (posy == Ybefore)
+                    if (tempy == Ybefore)
                     { collide(); }
+                }
+
+                if (tempx == seite+1)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                }
+
+                if (tempy == seite+1)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
                 }
 
                 else
