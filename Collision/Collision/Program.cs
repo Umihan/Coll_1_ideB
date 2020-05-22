@@ -106,11 +106,11 @@ namespace ConsoleApplication1
                         tempy = Ybefore +1;
 
                     break;
+                        
+                    case 3:
                         tempx = Xbefore - 1;
                         tempy = Ybefore;
-                    case 3:
-
-                    break;
+                        break;
 
                     case 4:
                         tempx = Xbefore;
@@ -122,30 +122,49 @@ namespace ConsoleApplication1
                 }
 
                 hide();
-                show();
+                
 
-                if (tempx == Xbefore)        //Falls auf der gleichen Position
-                {
-                    if (tempy == Ybefore)
-                    { collide(); }
-                }
+                
 
-                if (tempx == seite+1)
+                if (tempx == seite)
                 {
                     Console.WriteLine("Position außerhalb des Feldes!");
+                    tempx--;
                 }
-
-                if (tempy == seite+1)
+                if (tempx == -1)
                 {
                     Console.WriteLine("Position außerhalb des Feldes!");
+                    tempx ++;
+                }
+                if (tempy == seite)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                    tempy--;
+                }
+                if (tempy == -1)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                    tempy ++;
+                }
+
+                if (feld[tempx, tempy] == 1)        //Falls auf der gleichen Position
+                {
+
+                    collide();
                 }
 
                 else
                 {
+                    feld[posx, posy] = 0;
+
                     posx = tempx;
                     posy = tempy;
+
+                    feld[posx, posy] = 1;
                 }
-               
+
+                show();
+
             }
 
         }
