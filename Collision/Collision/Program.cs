@@ -126,6 +126,89 @@ namespace ConsoleApplication1
             //Öffentliche Methoden
             public void Move()
             {
+                Random Directions = new Random(); //Random Zahl für die Richtung wird generiert
+                int direction = Directions.Next(1, 4);
+
+                int Xbefore = posx; 
+                int Ybefore = posy;
+
+                int tempx = 0;
+                int tempy = 0;
+
+                switch (direction)
+                {
+
+                    case 1:
+                        tempx = Xbefore + 1;
+                        tempy = Ybefore;
+
+                    break;
+
+
+                    case 2:
+                        tempx = Xbefore;
+                        tempy = Ybefore +1;
+
+                    break;
+                        
+                    case 3:
+                        tempx = Xbefore - 1;
+                        tempy = Ybefore;
+                        break;
+
+                    case 4:
+                        tempx = Xbefore;
+                        tempy = Ybefore-1;
+
+                    break;
+
+                   
+                }
+
+                hide();
+                
+
+                
+
+                if (tempx == seite)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                    tempx--;
+                }
+                if (tempx == -1)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                    tempx ++;
+                }
+                if (tempy == seite)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                    tempy--;
+                }
+                if (tempy == -1)
+                {
+                    Console.WriteLine("Position außerhalb des Feldes!");
+                    tempy ++;
+                }
+
+                if (feld[tempx, tempy] == 1)        //Falls auf der gleichen Position
+                {
+
+                    collide();
+                }
+
+                else
+                {
+                    feld[posx, posy] = 0;
+
+                    posx = tempx;
+                    posy = tempy;
+
+                    feld[posx, posy] = 1;
+                }
+
+                show();
+
             }
 
         }
